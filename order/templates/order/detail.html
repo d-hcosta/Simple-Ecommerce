@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block title %}{{ order}} | {% endblock %}
+{% load filters %}
+{% load static %}
+
+{% block content %}
+
+{% include 'partials/_order.html' %}
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}Payment | {% endblock %}
+{% load filters %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col">
+        <h3>Pay method</h3>
+        <p>Method</p>
+    </div>
+</div>
+
+{% include 'partials/_order.html' %}
+
+<div class="row mt-4">
+    <div class="col">
+        <a href="#" class="btn btn-primary btn-block btn-lg">Pay</a>
+    </div>
+</div>
+
+{% endblock %}

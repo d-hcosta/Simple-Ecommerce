@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% load filters %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+{% if cart %}
+<div class="row mt-3">
+    <div class="col">
+        <h3>Shopping cart.</h3>
+        <p class="lead">The products, quantities and prices you chose.</p>
+
+        {% include 'partials/_cart.html' %}
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col-lg">
+        <p class='lead'>Total in the shopping cart.</p>
+
+        <div class='table-responsive'>
+            <table class="table">
+                <tr>
+                    <td class="font-weight-bold">Total</td>
+                    <td>{{ cart|sum_price_cart|format_price  }}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="col-lg mt-auto">
+        {% if request.user.is_authenticated %}
+        <a class="btn btn-lg btn-block btn-primary" href="{% url 'product:resume' %}">
+            Checkout
+        </a>
+        {% else %}
+        <a class="btn btn-lg btn-block btn-primary" href="{% url 'account:create' %}">
+            Login or Register
+        </a>
+        {% endif %}
+    </div>
+</div>
+
+{% else %}
+<div class="row mt-3">
+    <div class="col">
+        <h3>Empty shopping cart.</h3>
+        <p class="lead">There are no products in your shopping cart.</p>
+    </div>
+</div>
+
+{% endif %}
+{% endblock %}

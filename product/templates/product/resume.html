@@ -1,0 +1,65 @@
+{% extends 'index.html' %}
+{% load filters %}
+{% block title %}Resume | {% endblock %}
+
+{% block content %}
+<div class="row mb-5">
+    <div class="col-lg">
+        <h2>Summary of your purchase</h2>
+
+        <p class="lead">User data:</p>
+        <p>In case you need to edit, <a href="{% url 'account:create' %}">click here.</a></p>
+        <dl class="row">
+            <dt class="col-lg-2">Name:</dt>
+            <dd class="col-lg-4">{{ user.first_name }}</dd>
+            <dt class="col-lg-2">Sobrenome:</dt>
+            <dd class="col-lg-4">{{ user.last_name }}</dd>
+            <dt class="col-lg-2">E-mail:</dt>
+            <dd class="col-lg-4">{{ user.email }}</dd>
+        </dl>
+
+        <p class="lead">Address information:</p>
+        <p>In case you need to edit, <a href="{% url 'account:create' %}">click here.</a></p>
+        <dl class="row">
+            <dt class="col-lg-2">Adress:</dt>
+            <dd class="col-lg-4">{{ user.account.street_adress }}</dd>
+
+            <dt class="col-lg-2">Birth date:</dt>
+            <dd class="col-lg-4">{{ user.account.birth_date }}</dd>
+
+            <dt class="col-lg-2">City:</dt>
+            <dd class="col-lg-4">{{ user.account.city }}</dd>
+            <dt class="col-lg-2">State:</dt>
+            <dd class="col-lg-4">{{ user.account.state }}</dd>
+
+            <dt class="col-lg-2">Zipcode:</dt>
+            <dd class="col-lg-4">{{ user.account.zipcode }}</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <h3>Shopping cart.</h3>
+        <p class="lead">The products, quantities and prices you have chosen.</p>
+
+        {% include 'partials/_cart.html' %}
+    </div>
+</div>
+
+<div class="row mt-3">
+    <div class="col">
+        <p class="lead text-center"><span class="font-weight-bold">Cart total:</span>
+            {{ cart|cart_total|format_price }}</p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <a class="btn btn-block btn-primary btn-lg" href="{% url 'order:saveorder' %}">
+            Place order and pay
+        </a>
+    </div>
+</div>
+
+{% endblock %}
