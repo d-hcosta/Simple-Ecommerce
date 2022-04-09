@@ -45,3 +45,6 @@ python -m venv venv
 pip install -r requirements.txt
 python manage.py migrate
 ```    
+
+## Screenshot:
+![image](https://user-images.githubusercontent.com/88698720/162589993-c0a8b79f-b435-4b7c-875e-923dfb708f34.png)
