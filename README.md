@@ -31,17 +31,17 @@ git clone https://github.com/Vrag404/Simple-Ecommerce.git
 
 ### Windows:
 ```
-  cd Simple-Ecommerce
-  python -m venv venv
-  venv\Scripts\activate.bat
-  pip install -r requirements.txt
-  python manage.py migrate
+cd Simple-Ecommerce
+python -m venv venv
+venv\Scripts\activate.bat
+pip install -r requirements.txt
+python manage.py migrate
 ```
 ### Linux:
 ```
-  cd Simple-Ecommerce
-  python -m venv venv
-  . venv/bin/activate
-  pip install -r requirements.txt
-  python manage.py migrate
+cd Simple-Ecommerce
+python -m venv venv
+. venv/bin/activate
+pip install -r requirements.txt
+python manage.py migrate
 ```    
