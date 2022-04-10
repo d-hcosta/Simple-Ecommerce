@@ -11,4 +11,5 @@ urlpatterns = [
         name="removefromcart"),
     path('cart/', views.Cart.as_view(), name="cart"),
     path('resume/', views.Resume.as_view(), name="resume"),
+    path('search/', views.Search.as_view(), name="search"),
 ]
