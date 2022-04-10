@@ -1,9 +1,13 @@
 from django.contrib import admin
 from . import models
+from .forms import MandatoryVariation
 
 class VariationInline(admin.TabularInline):
     model = models.Variation
-    extra = 1
+    formset = MandatoryVariation
+    min_num = 1
+    extra = 0
+    can_delete = True
 
 class AdminProduct(admin.ModelAdmin):
     list_display = ['name', 'short_description',

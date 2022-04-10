@@ -15,11 +15,17 @@
         price = this.options[this.selectedIndex].getAttribute('price-data');
         promotional_price = this.options[this.selectedIndex].getAttribute('promotional-price-data');
 
-        variation_price.innerHTML = price;
 
-        if (variation_promotional_price) {
-            variation_promotional_price.innerHTML = promotional_price;
+        if (price && variation_price) {
+            variation_price.innerHTML = price;
         }
+        
+        if (variation_promotional_price && promotional_price) {
+            variation_promotional_price.innerHTML = promotional_price;
+        } else {
+            variation_promotional_price.innerHTML = price;
+            variation_price.innerHTML = ''
+        }
+
     })
 })();
-
