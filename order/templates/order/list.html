@@ -21,8 +21,8 @@
                 {% for order in orders %}
                 <tr>
                     <th scope="row">{{ order }}</td>
-                    <td>{{ order.total }}</td>
-                    <td>{{ order.qty_total|format_price }}</td>
+                    <td>{{ order.total|format_price }}</td>
+                    <td>{{ order.qty_total }}</td>
                     <td>{{ order.get_status_display }}</td>
                     <td>
                         <a href="{% url 'order:detail' order.id %}">
