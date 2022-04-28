@@ -1,5 +1,5 @@
 (function () {
-    select_variation = document.getElementById('select-variations');
+    select_variation = document.getElementById('select-variation');
     variation_price = document.getElementById('variation-price');
     variation_promotional_price = document.getElementById('variation-promotional-price');
 
